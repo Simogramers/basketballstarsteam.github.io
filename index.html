@@ -1,90 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basketball Stars Challenge</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0c0c0c;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .container {
-      max-width: 450px;
-      margin: auto;
-    }
-
-    h1 {
-      color: #f9a825;
-      font-size: 2em;
-    }
-
-    p {
-      font-size: 1.1em;
-      margin-top: 15px;
-      line-height: 1.6;
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin: 25px 0;
-      padding: 15px 28px;
-      background-color: #f9a825;
-      color: #111;
-      font-size: 1.1em;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #ffcc33;
-    }
-
-    .game-img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      margin-top: 30px;
-    }
-
-    footer a {
-      color: #888;
-      font-size: 0.9em;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5em;
-      }
-
-      p {
-        font-size: 1em;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intelligence Missions</title>
+<meta name="description" content="Test your intelligence, make the right choices and earn your spy badge in 2 minutes.">
+<style>
+:root{--bg:#070d1a;--panel:#0c1628;--line:#1f3358;--gold:#f5a623;--gold2:#ffc233;--mut:#aab6cc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#030712;color:#fff;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;display:flex;justify-content:center}
+.page{width:100%;max-width:520px;background:var(--bg);overflow:hidden;padding-bottom:20px}
+.hero{position:relative;padding:18px 18px 10px;min-height:600px;
+background:linear-gradient(90deg,rgba(7,13,26,.92) 0%,rgba(7,13,26,.5) 50%,rgba(7,13,26,.05) 100%),
+url("BCA8605B-BD2D-4718-9F1D-B4F3FDC5A509.jpeg") 0% 100%/120% auto no-repeat,#0b1a33}
+.top{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.08em;font-size:.85rem;line-height:1.2}
+.logo svg{width:38px;height:38px}
+.free{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:rgba(10,20,40,.7);padding:6px 12px;border-radius:20px;font-size:.8rem}
+.free i{width:16px;height:16px;border-radius:4px;background:#22c55e;display:inline-block}
+h1{margin-top:30px;font-size:2.4rem;line-height:1;font-weight:900;font-style:italic;text-transform:uppercase;max-width:280px}
+h1 span{color:var(--gold)}
+.sub{margin-top:16px;max-width:250px;color:#c5d0e4;font-size:.95rem;line-height:1.45}
+.bar{width:90px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);margin:16px 0}
+.feats{display:flex;max-width:300px;margin-top:170px}
+.feat{flex:1;text-align:center;font-size:.72rem;padding:0 6px;border-right:1px solid var(--line);line-height:1.25}
+.feat:last-child{border:none}
+.feat svg{width:30px;height:30px;stroke:#5aa9ff;fill:none;stroke-width:1.6;margin-bottom:6px}
+.cta{margin:14px 14px 0;border:2px solid var(--line);border-radius:18px;background:var(--panel);padding:16px;display:flex;align-items:center;gap:14px}
+.cta .t{display:flex;align-items:center;gap:12px;flex:1;font-weight:700;font-size:1.05rem;line-height:1.25;padding-right:12px;border-right:1px solid var(--line)}
+.cta .t svg{width:42px;height:42px;stroke:var(--gold);fill:none;stroke-width:3;flex:none}
+.cta .t b{color:var(--gold);font-size:1.2em}
+.btn-wrap{text-align:center;flex:1.1}
+.btn{display:block;background:linear-gradient(180deg,var(--gold2),var(--gold));color:#111;font-weight:800;font-size:1rem;padding:13px 8px;border-radius:12px;text-decoration:none;box-shadow:0 4px 16px rgba(245,166,35,.35)}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn-wrap small{display:block;margin-top:8px;font-size:.72rem;color:var(--mut)}
+.how h2{display:flex;align-items:center;gap:12px;margin:34px 14px 18px;font-style:italic;font-size:1.5rem;font-weight:900;text-transform:uppercase;justify-content:center}
+.how h2:before{content:"";flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--gold))}
+.how h2:after{content:"";flex:1;height:2px;background:linear-gradient(270deg,transparent,var(--gold))}
+.steps{display:flex;align-items:stretch;gap:6px;margin:0 14px}
+.step{flex:1;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 8px 14px;text-align:center}
+.step em{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:var(--gold);color:#111;font-weight:800;font-style:normal;display:grid;place-items:center}
+.step svg{width:44px;height:44px;stroke:#cfe0ff;fill:none;stroke-width:1.5;margin-bottom:8px}
+.step h3{font-size:.85rem;line-height:1.25}
+.step p{margin-top:8px;font-size:.72rem;color:var(--mut)}
+.arrow{align-self:center;color:var(--gold);font-size:1.6rem;font-weight:700}
+.trust{margin:22px 14px 0;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:14px 16px;display:flex;align-items:center;gap:14px}
+.trust svg{width:44px;height:44px;flex:none;stroke:var(--gold);fill:none;stroke-width:2.2}
+.trust p{flex:1;line-height:1.3;font-size:.95rem;color:var(--mut);padding-right:10px;border-right:1px solid var(--line)}
+.trust b{color:var(--gold)}
+.flags{display:flex;gap:6px}
+.flag{width:26px;height:26px;border-radius:50%;border:1px solid #fff3}
+.de{background:linear-gradient(#000 33%,#d00 33% 66%,#fc0 66%)}
+.fr{background:linear-gradient(90deg,#0055a4 33%,#fff 33% 66%,#ef4135 66%)}
+.it{background:linear-gradient(90deg,#009246 33%,#fff 33% 66%,#ce2b37 66%)}
+.es{background:linear-gradient(#aa151b 25%,#f1bf00 25% 75%,#aa151b 75%)}
+.eu{background:#039;color:#fc0;display:grid;place-items:center;font-size:.7rem}
+footer{margin-top:26px;text-align:center;font-size:.85rem}
+footer a{color:#dbe6ff}
+footer span{margin:0 10px;color:var(--mut)}
+@media(max-width:400px){h1{font-size:2rem}.cta{flex-direction:column}.cta .t{border:none;padding:0}.btn-wrap{width:100%}.flag{width:20px;height:20px}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Basketball Stars 🏀</h1>
-    <img src="https://i.postimg.cc/QdSq4dFG/556-CCEB6-A4-F7-409-A-A057-8-A4276891366.png" alt="Basketball Stars Gameplay" class="game-img" />
-    <p>Can you score 3 in a row? Only 10% of players did it. Join the basketball showdown now and prove you’re the real MVP!</p>
-    <a href="https://bestlocker.eu/iframe/5be607e6-4543-11f0-920b-8a5fb7be40ea?allow_translate=1" class="cta-button">Start the Challenge</a>
+<main class="page">
 
-    <footer>
-      <a href="privacy.html">Privacy Policy</a>
-    </footer>
+<section class="hero">
+  <div class="top">
+    <div class="logo">
+      <svg viewBox="0 0 40 40" fill="none" stroke="#e8b04a" stroke-width="2"><circle cx="20" cy="20" r="9"/><path d="M11 20h18M20 11c-5 6-5 12 0 18M20 11c5 6 5 12 0 18"/><path d="M6 28C2 18 6 8 14 5M34 28c4-10 0-20-8-23"/></svg>
+      <div>INTELLIGENCE<br>MISSIONS</div>
+    </div>
+    <div class="free"><i></i>100% Free</div>
   </div>
+  <h1>Are you ready for a <span>secret mission?</span></h1>
+  <p class="sub">Test your intelligence, make the right choices and prove you’re worthy of joining the elite intelligence unit.</p>
+  <div class="bar"></div>
+  <div class="feats">
+    <div class="feat"><svg viewBox="0 0 32 32"><path d="M16 5c-4-3-10 0-9 5-3 2-2 7 1 8-1 4 3 7 7 6V5zM16 5c4-3 10 0 9 5 3 2 2 7-1 8 1 4-3 7-7 6V5z"/></svg><br>Test Your Mind</div>
+    <div class="feat"><svg viewBox="0 0 32 32"><path d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z"/><path d="M11 16l4 4 7-8"/></svg><br>Make Strategic Decisions</div>
+    <div class="feat"><svg viewBox="0 0 32 32"><path d="M9 4h14v8a7 7 0 01-14 0zM9 7H4v2a5 5 0 005 5M23 7h5v2a5 5 0 01-5 5M16 19v5M10 28h12"/></svg><br>Earn Your Badge</div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="t">
+    <svg viewBox="0 0 48 48"><circle cx="24" cy="27" r="16"/><path d="M20 5h8M24 5v6M24 27v-8M36 12l3-3"/></svg>
+    <div>Complete the mission in just <b>2 minutes!</b></div>
+  </div>
+  <div class="btn-wrap">
+    <a class="btn" href="https://trkoffer.net/cl/i/42xkd5">Start the Mission &rarr;</a>
+    <small>No registration required.</small>
+  </div>
+</section>
+
+<section class="how">
+  <h2>How it works?</h2>
+  <div class="steps">
+    <div class="step"><em>1</em>
+      <svg viewBox="0 0 48 48"><path d="M10 24h28M14 24l3-12h14l3 12"/><circle cx="16" cy="34" r="6"/><circle cx="32" cy="34" r="6"/><path d="M22 34h4"/></svg>
+      <h3>Answer a Few Questions</h3><p>Show what you know.</p></div>
+    <div class="arrow">&rsaquo;</div>
+    <div class="step"><em>2</em>
+      <svg viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="34" rx="3"/><path d="M18 6h12v6H18zM16 22l2 2 4-4M16 31l2 2 4-4M26 22h8M26 31h8"/></svg>
+      <h3>Make Strategic Choices</h3><p>Think like an agent.</p></div>
+    <div class="arrow">&rsaquo;</div>
+    <div class="step"><em>3</em>
+      <svg viewBox="0 0 48 48" style="stroke:#f5a623"><path d="M24 12l3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1z"/><path d="M10 34C4 26 6 14 14 9M38 34c6-8 4-20-4-25"/></svg>
+      <h3>Get Your Result</h3><p>Discover your spy profile.</p></div>
+  </div>
+</section>
+
+<section class="trust">
+  <svg viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M16 24l6 6 11-12"/></svg>
+  <p>Trusted by <b>1M+ People</b><br>Across Europe</p>
+  <div class="flags"><span class="flag de"></span><span class="flag fr"></span><span class="flag it"></span><span class="flag es"></span><span class="flag eu">★</span></div>
+</section>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a><span>|</span><a href="terms.html">Terms of Service</a>
+</footer>
+
+</main>
 </body>
 </html>
